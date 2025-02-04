@@ -1,0 +1,16 @@
+{
+  "name": "lost-and-found-website",
+  "version": "1.0.0",
+  "description": "A platform for reporting and finding lost and found pets and items.",
+  "main": "src/js/app.js",
+  "scripts": {
+    "start": "live-server src/pages",
+    "test": "jest"
+  },
+  "dependencies": {
+    "jest": "^27.0.0"
+  },
+  "devDependencies": {},
+  "author": "Your Name",
+  "license": "MIT"
+}

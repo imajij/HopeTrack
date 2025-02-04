@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HopeTrack - Lost & Found Pets/People</title>
+    <link rel="stylesheet" href="/src/assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">HopeTrack</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="../pages/lost.html">Report</a></li>
+                <li><a href="../pages/submit.html">Search</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h1>Find What You've Lost</h1>
+            <p>Report or search for lost pets and people in your area</p>
+            <div class="cta-buttons">
+                <button class="btn primary">Report Lost</button>
+                <button class="btn secondary">Search Found</button>
+            </div>
+        </section>
+
+        <section id="search-section">
+            <h2>Search Database</h2>
+            <div class="search-container">
+                <input type="text" placeholder="Search by location...">
+                <select>
+                    <option>Pet</option>
+                    <option>Person</option>
+                </select>
+                <button class="search-btn">Search</button>
+            </div>
+            <div id="results-container"></div>
+        </section>
+
+        <section id="report-form">
+            <h2>Report Missing</h2>
+            <form id="submit-report">
+                <input type="text" placeholder="Name" required>
+                <input type="text" placeholder="Location" required>
+                <textarea placeholder="Description" required></textarea>
+                <input type="file" accept="image/*" required>
+                <button type="submit">Submit Report</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 HopeTrack. All rights reserved.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

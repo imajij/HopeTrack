@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Found Items - Lost and Found</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <header id="header"></header>
+    
+    <main>
+        <h1>Found Items</h1>
+        <div id="found-items-list">
+            <!-- Found items will be dynamically inserted here -->
+        </div>
+    </main>
+    
+    <footer id="footer"></footer>
+    
+    <script src="../js/app.js"></script>
+    <script src="../components/header.js"></script>
+    <script src="../components/footer.js"></script>
+    <script src="../components/listing.js"></script>
+    <script>
+        // Initialize header and footer
+        document.getElementById('header').innerHTML = createHeader();
+        document.getElementById('footer').innerHTML = createFooter();
+        
+        // Function to display found items
+        function displayFoundItems(items) {
+            const list = document.getElementById('found-items-list');
+            items.forEach(item => {
+                list.innerHTML += createListing(item);
+            });
+        }
+        
+        // Example found items data
+        const foundItems = [
+            { id: 1, name: 'Dog - Max', description: 'Found near the park.' },
+            { id: 2, name: 'Cat - Whiskers', description: 'Found in the neighborhood.' }
+        ];
+        
+        // Display the found items
+        displayFoundItems(foundItems);
+    </script>
+</body>
+</html>
