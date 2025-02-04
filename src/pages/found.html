@@ -1,48 +1,99 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Found Items - Lost and Found</title>
-    <link rel="stylesheet" href="../assets/css/styles.css">
-</head>
-<body>
-    <header id="header"></header>
-    
-    <main>
-        <h1>Found Items</h1>
-        <div id="found-items-list">
-            <!-- Found items will be dynamically inserted here -->
-        </div>
-    </main>
-    
-    <footer id="footer"></footer>
-    
-    <script src="../js/app.js"></script>
-    <script src="../components/header.js"></script>
-    <script src="../components/footer.js"></script>
-    <script src="../components/listing.js"></script>
-    <script>
-        // Initialize header and footer
-        document.getElementById('header').innerHTML = createHeader();
-        document.getElementById('footer').innerHTML = createFooter();
-        
-        // Function to display found items
-        function displayFoundItems(items) {
-            const list = document.getElementById('found-items-list');
-            items.forEach(item => {
-                list.innerHTML += createListing(item);
-            });
+    <title>Found Items - HopeTrack</title>
+    <link rel="stylesheet" href="/src/assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .found-items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem 5%;
         }
         
-        // Example found items data
-        const foundItems = [
-            { id: 1, name: 'Dog - Max', description: 'Found near the park.' },
-            { id: 2, name: 'Cat - Whiskers', description: 'Found in the neighborhood.' }
-        ];
+        .found-item-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
         
-        // Display the found items
-        displayFoundItems(foundItems);
-    </script>
+        .found-item-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        
+        .filters {
+            padding: 1rem 5%;
+            background: #f5f5f5;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">HopeTrack</div>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="lost.html">Report</a></li>
+                <li><a href="found.html">Search</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header" style="text-align: center; padding: 2rem;">
+            <h1>Found Items</h1>
+            <p>Recently found pets and people</p>
+        </section>
+
+        <section class="filters">
+            <select id="type-filter">
+                <option value="all">All Types</option>
+                <option value="pet">Pets</option>
+                <option value="person">People</option>
+            </select>
+            <input type="date" id="date-filter">
+            <input type="text" placeholder="Search by location..." id="location-filter">
+        </section>
+
+        <section class="found-items-grid" id="found-items-container">
+            <div class="found-item-card">
+                <img src="https://via.placeholder.com/200" alt="Found Pet">
+                <h3>Rex</h3>
+                <p>Type: Dog</p>
+                <p>Location: City Park</p>
+                <p>Date Found: 2024-01-18</p>
+                <p>Contact: 555-0125</p>
+                <button class="btn primary">Claim Pet</button>
+            </div>
+            <div class="found-item-card">
+                <img src="https://via.placeholder.com/200" alt="Found Pet">
+                <h3>Mittens</h3>
+                <p>Type: Cat</p>
+                <p>Location: Main Street</p>
+                <p>Date Found: 2024-01-19</p>
+                <p>Contact: 555-0126</p>
+                <button class="btn primary">Claim Pet</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 HopeTrack. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
 </body>
 </html>
