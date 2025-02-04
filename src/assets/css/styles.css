@@ -162,3 +162,132 @@ footer {
         flex-direction: column;
     }
 }
+
+/* Base styles */
+:root {
+    --primary-color: #4CAF50;
+    --text-color: #333;
+    --bg-color: #fff;
+    --spacing-unit: 1rem;
+  }
+  
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+  
+  body {
+      font-size: 16px;
+      line-height: 1.5;
+      font-family: 'Arial', sans-serif;
+  }
+  
+  /* Responsive Typography */
+  h1 { font-size: clamp(2rem, 5vw, 3rem); }
+  h2 { font-size: clamp(1.5rem, 4vw, 2rem); }
+  p { font-size: clamp(1rem, 2vw, 1.2rem); }
+  
+  /* Responsive Navigation */
+  nav {
+      position: relative;
+      padding: var(--spacing-unit);
+  }
+  
+  .nav-toggle {
+      display: none;
+  }
+  
+  /* Responsive Grid/Layout */
+  .search-container,
+  #report-form,
+  .found-items-grid,
+  .lost-items-grid {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-unit);
+  }
+  
+  /* Responsive Images */
+  img {
+      max-width: 100%;
+      height: auto;
+  }
+  
+  /* Media Queries */
+  @media screen and (max-width: 768px) {
+      /* Navigation */
+      nav {
+          flex-direction: column;
+      }
+  
+      nav ul {
+          flex-direction: column;
+          width: 100%;
+          text-align: center;
+          gap: 1rem;
+          padding: 1rem 0;
+      }
+  
+      /* Search Section */
+      .search-container {
+          flex-direction: column;
+          gap: 1rem;
+      }
+  
+      .search-container input,
+      .search-container select,
+      .search-container button {
+          width: 100%;
+      }
+  
+      /* Forms */
+      #submit-report {
+          padding: 1rem;
+      }
+  
+      /* Grid Layouts */
+      .found-items-grid,
+      .lost-items-grid {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+      }
+  
+      /* Buttons */
+      .cta-buttons {
+          flex-direction: column;
+          gap: 1rem;
+      }
+  
+      .btn {
+          width: 100%;
+          margin: 0.5rem 0;
+      }
+  }
+  
+  @media screen and (max-width: 480px) {
+      /* Further adjustments for smaller screens */
+      #hero {
+          padding: 2rem 1rem;
+      }
+  
+      .found-item-card,
+      .lost-item-card {
+          padding: 0.5rem;
+      }
+  
+      form input,
+      form textarea {
+          font-size: 16px; /* Prevents zoom on mobile */
+      }
+  }
+  
+  /* Print styles */
+  @media print {
+      nav,
+      .btn,
+      #search-section {
+          display: none;
+      }
+  }
